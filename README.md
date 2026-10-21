@@ -16,13 +16,24 @@ Glovia is a full-stack skincare website that helps people understand their skin 
 - **Contact form** – messages are saved to the database
 - **Admin dashboard** – add, edit and delete products (with image upload), delete reviews, ban or unban users, and grant or remove admin rights
 
-| Skin concern page | Product recommendations |
-|---|---|
-| ![Skin page](screenshots/skin_page.jpg) | ![Products](screenshots/products.jpg) |
-
-| Skin quiz | Admin dashboard |
-|---|---|
-| ![Quiz](screenshots/quiz.jpg) | ![Admin](screenshots/admin.jpg) |
+<table>
+  <tr>
+    <th>Skin concern page</th>
+    <th>Product recommendations</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/skin_page.jpg" alt="Skin concern page" width="420"></td>
+    <td><img src="screenshots/products.jpg" alt="Product recommendations" width="420"></td>
+  </tr>
+  <tr>
+    <th>Skin quiz</th>
+    <th>Admin dashboard</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/quiz.jpg" alt="Skin quiz" width="420"></td>
+    <td><img src="screenshots/admin.jpg" alt="Admin dashboard" width="420"></td>
+  </tr>
+</table>
 
 ## Tech Stack
 
