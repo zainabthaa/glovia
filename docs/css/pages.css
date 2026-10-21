@@ -58,7 +58,7 @@ body {
     color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
   #navbarNav .d-flex {
     justify-content: center !important;
     margin-top: 1rem;
@@ -95,8 +95,8 @@ body {
     margin-bottom: 10px;
 }
 
-/* Font size increase for medium screens and up */
-@media (min-width: 768px) {
+/* Larger menu font when the full menu is shown (992px and up) */
+@media (min-width: 992px) {
     .navbar-nav .nav-link {
         font-size: 1.3rem;
         padding: 0 10px;
@@ -809,3 +809,11 @@ body {
     
 }
 
+/* Tablets and small laptops: the cards are narrow here, so keep the 'View' button
+   in the normal flow (next to the heart) instead of pinned to the corner,
+   so it never covers the heart */
+@media (min-width: 769px) and (max-width: 1199.98px) {
+    .button-right {
+        position: static !important;
+    }
+}

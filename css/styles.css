@@ -73,8 +73,8 @@ body {
     margin-bottom: 10px;
 }
 
-/* Font size increase for medium screens and up */
-@media (min-width: 768px) {
+/* Larger menu font when the full menu is shown (992px and up) */
+@media (min-width: 992px) {
     .navbar-nav .nav-link {
         font-size: 1.3rem;
         padding: 0 10px;
@@ -113,7 +113,7 @@ body {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
   #navbarNav .d-flex {
     justify-content: center !important;
     margin-top: 1rem;

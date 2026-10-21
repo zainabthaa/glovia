@@ -20,7 +20,7 @@ require_once 'includes/security.php';
 
 <body>
     <article id="article-head"> <!-- Header -->
-        <nav class="navbar navbar-expand-md navbar-light bg-light" style="padding-top: 1rem; padding-bottom: 1rem;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top: 1rem; padding-bottom: 1rem;">
 
             <div class="container-fluid">
 
@@ -194,8 +194,12 @@ require_once 'includes/security.php';
                 }
 
                 // On load: update cards and center the active one
+                // On load: start on the card marked "active" in the HTML (the middle one), centred
+                const startCard = container.querySelector('.redness-card.active');
+                if (startCard) {
+                    container.scrollTo({ left: startCard.offsetLeft - (container.offsetWidth / 2) + (startCard.offsetWidth / 2), behavior: 'instant' });
+                }
                 updateCards();
-                centerActiveCard();
 
                 // On scroll: update active/blur states
                 container.addEventListener('scroll', () => {

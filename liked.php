@@ -93,7 +93,7 @@ $conn->close();
 
 <body>
     <article id="article-head"> <!-- Header -->
-        <nav class="navbar navbar-expand-md navbar-light bg-light" style="padding-top: 1rem; padding-bottom: 1rem;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top: 1rem; padding-bottom: 1rem;">
 
             <div class="container-fluid">
 

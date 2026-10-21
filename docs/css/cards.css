@@ -6,7 +6,9 @@
     scroll-snap-type: x mandatory;
     display: flex;
     gap: 1rem;
-    padding: 1rem 1rem;
+    /* Equal space on both sides = half the screen minus half a card (300px),
+       so the first, middle and last card can each sit exactly in the centre */
+    padding: 1rem calc(50% - 150px);
     scroll-behavior: smooth;
     flex-wrap: nowrap;
     /* prevent wrapping so scroll works horizontally */
@@ -17,7 +19,6 @@
 /* Hide scrollbar on large screens */
 @media (min-width: 769px) {
     .carousel-container {
-        padding-left: 345px;
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none;    /* Firefox */
     }
