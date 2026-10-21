@@ -1,0 +1,14 @@
+# Local database settings (copy includes/config.example.php to includes/config.php)
+includes/config.php
+
+# macOS / editor junk
+.DS_Store
+.vscode/
+.idea/
+
+# Composer (not used, but just in case)
+vendor/
+
+# Never commit raw database exports (they can contain personal data)
+database/*.sql
+!database/database.sql

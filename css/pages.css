@@ -1,0 +1,811 @@
+
+
+
+
+
+@font-face {
+    font-family: 'GiazaStencil';
+    src: url('../assets/fonts/Giza Stencil.otf') format('opentype');
+}
+
+/* Always on header */
+#article-head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    /* Higher than other elements */
+    background-color: white;
+    /* Ensures visibility */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional shadow effect */
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding-top: 60px;
+
+}
+
+/*General buttons*/
+.button {
+    background: transparent;
+    width: 20%;
+    max-width: 200px;
+    /* Prevents button from being too large */
+    min-width: 120px;
+    /* Prevents button from being too small */
+    border-radius: 50px;
+    /* Rounded edges */
+    padding: 15px;
+    cursor: pointer;
+    border: 2px solid #555;
+    color: #555;
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+    /* Adjust text size */
+    text-decoration: none;
+    /* Remove underline from the button */
+
+}
+
+.button:hover {
+    background-color: #555;
+    color: white;
+}
+
+@media (max-width: 768px) {
+  #navbarNav .d-flex {
+    justify-content: center !important;
+    margin-top: 1rem;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  #navbarNav .button {
+    margin-right: 0 !important;
+  }
+}
+
+
+
+.navbar-brand {
+    font-family: 'GiazaStencil', sans-serif;
+    font-size: 30px !important;
+    margin-left: 20px; /* Add space from left */
+    /* The !important ensures that this style takes precedence */
+}
+
+/* General navbar padding */
+.navbar-collapse {
+    padding: 10px 15px;
+}
+
+/* Nav items spacing */
+.navbar-nav .nav-item {
+    margin-bottom: 5px;
+}
+
+/* Navbar toggler button spacing */
+.navbar-toggler {
+    margin-bottom: 10px;
+}
+
+/* Font size increase for medium screens and up */
+@media (min-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1.3rem;
+        padding: 0 10px;
+
+    }
+    
+    .navbar-collapse {
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+}
+
+/* Center navbar links */
+.navbar-nav {
+    position: absolute;
+    left: 45%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+}
+
+/* Center navigation links in mobile view */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        position: static;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+@media (max-width: 991.98px) {
+    /* Target only the account button container */
+    #navbarNav > .d-flex {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    /* Reset any flex-end alignment */
+    #navbarNav {
+        justify-content: center !important;
+    }
+    
+    /* Ensure the initial circle stays aligned */
+    .initial-circle {
+        margin-right: 8px !important;
+    }
+}
+
+.about-hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    transform: none;
+    transition: none;
+
+    min-height: 50vh;
+    /* Allows it to grow if content is taller */
+    height: auto;
+    padding: 2rem 1rem;
+    /* Optional: extra breathing room */
+}
+
+.about-hero:hover {
+    transform: none;
+}
+
+.about-hero .overlay {
+    background-color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1s forwards;
+    max-width: 800px;
+    /* Add this */
+    width: 90%;
+    /* Responsive default */
+    margin: 0 auto;
+    /* Center horizontally */
+    padding: 1rem 1.5rem;
+    /* Reduce vertical padding */
+    margin-left: 2rem;
+
+}
+
+.about-hero {
+    image-rendering: smooth;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.about-hero h1 {
+    font-size: 2.5rem;
+    color: #2c2c2c;
+}
+
+.about-hero p {
+    font-size: 1.1rem;
+    color: #5a5a5a;
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+    .about-hero {
+        min-height: 70vh;
+        padding: 2rem 1rem;
+        background-position: right center; /* 👈 shift image to show right side */
+    }
+    .about-hero .overlay {
+        margin: 0 auto;          /* 👈 center it */
+        transform: translateX(0); /* 👈 avoid shifting on small screens */
+    }
+
+    .about-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Large screen */
+@media (min-width: 1200px) {
+    .about-hero .overlay {
+        max-width: 600px;
+        /* Make it narrower on large screens */
+    }
+}
+
+.section,
+.mission,
+.approach,
+.principles,
+.quote-block,
+.cta {
+    padding: 2.5rem 1.5rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.principles ul {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.principles ul li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.principles ul li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.principles ul li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.principles ul li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.principles ul li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quote-block blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    border-left: 4px solid #555;
+    padding-left: 1rem;
+    color: #444;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.cta h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.75rem;
+}
+
+.cta a {
+    padding: 0.5rem 1;
+}
+
+.principles {
+    background: transparent;
+    padding: 3rem 1.5rem;
+    border-radius: 1rem;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.product-image:hover {
+    filter: none !important;
+}
+
+/* new */
+.product-card {
+    display: flex;
+    flex-direction: row;
+    /* Create horizontal layout */
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Left side content */
+.product-card .left-side {
+    flex: 1;
+    /* Takes up available space on the left */
+    padding-right: 20px;
+    /* Space between left and right */
+}
+
+/* Right side (empty area) */
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align content to top */
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.button-right {
+    position: absolute;
+    /* Position the button */
+    bottom: 20px;
+    /* 20px from the bottom */
+    right: 20px;
+    /* 20px from the right */
+    background: transparent;
+    border: 2px solid #555;
+    color: #555;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-right:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* Styling for the image on the left */
+.product-card .left-side img {
+    width: 100%;
+    /* Make the image take full width of the left section */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    /* Ensure the image covers the space appropriately */
+}
+
+/* Content in the left-side (product category, title, price, etc.) */
+
+.product-title {
+    font-weight: bold;
+}
+
+.product-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.rating {
+    color: #ffc107;
+}
+
+.text-overlay {
+    color: #555;
+}
+
+.product-description {
+    margin-top: 10px;
+    /* Push text down slightly from the top */
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+.treatment-tip {
+    font-size: 1.1rem;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    border-left: 5px solid #d1d1d1;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.treatment-tip:hover {
+    background-color: #e6e6e6;
+    transform: translateY(-5px);
+    border-left-color: #b5b5b5;
+}
+
+.treatment-tip strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.treatment-tip a {
+    color: inherit !important;
+    /* Ensure links inherit color */
+    text-decoration: none;
+}
+
+.treatment-tip a:hover {
+    color: inherit !important;
+    /* Ensure links don't change color on hover */
+}
+
+.treatment-tip * {
+    color: #333 !important;
+    /* Ensure all text inside the treatment-tip has the correct color */
+}
+
+.redness-intro-section h2,
+.redness-intro-section h3 {
+    color: var(--bs-body-color);
+}
+
+.redness-intro-section p.lead {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.section-heading {
+    font-size: 2.2rem;
+    color: #222;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section-heading::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #555;
+    display: block;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+.treatment-tip {
+    display: block;
+    margin-top: 1rem;
+    color: #d96981;
+    /* ----------------------- CHANGE COLOR ; left and right media change button ------------------------ */
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.image-section img {
+    max-height: 280px;
+    object-fit: cover;
+}
+
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.redness-card {
+    background-color: #EBEBEB;
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.redness-card:hover {
+    transform: scale(1.01);
+}
+
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.image-section img:hover {
+    transform: scale(1.03);
+}
+
+/* Fade animation */
+.fade-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .right-side {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .product-description {
+        margin-bottom: 0.5rem;
+    }
+
+    .button-right {
+        position: static !important;
+        margin-top: auto;
+        align-self: flex-end;
+    }
+}
+/* Ensure all product cards have the same height and content is spaced properly */
+.product-card {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    min-height: 100%;
+}
+
+.product-card .left-side,
+.product-card .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-description {
+    flex-grow: 1;
+}
+
+.product-title {
+    min-height: 3rem;
+    /* optional: ensures consistent space for titles */
+}
+
+/* Equal height columns on all screen sizes */
+@media (min-width: 768px) {
+    .product-card {
+        height: 100%;
+    }
+
+    .product-card {
+        flex: 1;
+    }
+}
+
+/* User icon after login */
+.circle-button {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.initial-circle {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Read more button styling */
+.read-more-btn {
+  display: none;
+  color: #007bff;
+  font-size: 0.9rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Truncate text on small screens only */
+@media (max-width: 768px) {
+  .short-description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-clamp: 4;
+  }
+
+  .read-more-btn {
+    display: inline;
+  }
+}
+
+@media (min-width: 769px) {
+  .product-description {
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  .read-more-btn {
+    display: none !important;
+  }
+}
+
+
+/* Default: row (desktop/tablet) */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 576px) {
+    .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .action-buttons a,
+    .action-buttons button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+.intro-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f5f5;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 0; 
+}
+
+.intro-section .text-section {
+    flex: 1;
+    max-width: 60%;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+.intro-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.intro-section p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.2px;
+}
+
+.intro-section .image-section {
+    flex: 1;
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.intro-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .intro-section {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 60px; /* Adjust for smaller screens */
+    }
+
+    .intro-section .text-section {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .intro-section .image-section {
+        flex: 1;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+        margin-left: -9.8%; /* Adjust this value to position it further left */
+        transition: margin-left 0.3s ease; /* Smooth transition for left shift */
+    }
+    
+}
+

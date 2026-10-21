@@ -1,0 +1,110 @@
+/* Carousel container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    scroll-behavior: smooth;
+    flex-wrap: nowrap;
+    /* prevent wrapping so scroll works horizontally */
+    /* half card width */
+
+}
+
+/* Hide scrollbar on large screens */
+@media (min-width: 769px) {
+    .carousel-container {
+        padding-left: 345px;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none;    /* Firefox */
+    }
+
+    .carousel-container::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
+}
+
+
+/* Show scrollbar on small screens */
+@media (max-width: 768px) {
+    .carousel-container::-webkit-scrollbar {
+        display: block;
+        height: 8px;
+    }
+    .carousel-container {
+        -ms-overflow-style: auto;
+        scrollbar-width: auto;
+    }
+    .carousel-container::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        border-radius: 4px;
+    }
+    .carousel-container::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 4px;
+    }
+}
+
+
+/* Each card styling */
+.redness-card {
+    scroll-snap-align: center;
+    flex: 0 0 300px;
+    /* card width */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+    padding: 1rem;
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+/* Blur & scale down effect for neighbors */
+.redness-card.blur {
+    filter: blur(4px);
+    transform: scale(0.85);
+    opacity: 0.6;
+    z-index: 5;
+}
+
+/* Image styling inside cards */
+.redness-card img {
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Text section */
+.text-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.treatment-tip {
+    background: #f0f8ff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.redness-card.blur {
+    filter: blur(4px);
+    transform: scale(0.85);
+    opacity: 0.6;
+    z-index: 5;
+}
+
+.redness-card.active {
+    filter: none !important;
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    z-index: 10 !important;
+}

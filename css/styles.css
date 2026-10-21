@@ -1,0 +1,529 @@
+@font-face {
+    font-family: 'GiazaStencil';
+    src: url('../assets/fonts/Giza Stencil.otf') format('opentype');
+}
+
+/*General buttons*/
+.button {
+    background: transparent;
+    width: 20%;
+    max-width: 200px;
+    /* Prevents button from being too large */
+    min-width: 120px;
+    /* Prevents button from being too small */
+    border-radius: 50px;
+    /* Rounded edges */
+    padding: 15px;
+    cursor: pointer;
+    border: 2px solid #555;
+    color: #555;
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+    /* Adjust text size */
+    text-decoration: none;
+    /* Remove underline from the button */
+
+}
+
+.button:hover {
+    background-color: #555;
+    color: white;
+}
+
+
+
+/* Always on header */
+#article-head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    /* Higher than other elements */
+    background-color: white;
+    /* Ensures visibility */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional shadow effect */
+}
+
+body {
+    padding-top: 60px;
+}
+
+.navbar-brand {
+    font-family: 'GiazaStencil', sans-serif;
+    font-size: 30px !important;
+    margin-left: 20px;
+    /* Add space from left */
+    /* The !important ensures that this style takes precedence */
+}
+
+/* General navbar padding */
+.navbar-collapse {
+    padding: 10px 15px;
+}
+
+/* Nav items spacing */
+.navbar-nav .nav-item {
+    margin-bottom: 5px;
+}
+
+/* Navbar toggler button spacing */
+.navbar-toggler {
+    margin-bottom: 10px;
+}
+
+/* Font size increase for medium screens and up */
+@media (min-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1.3rem;
+        padding: 0 10px;
+
+    }
+
+    .navbar-collapse {
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+}
+
+/* Center navbar links */
+.navbar-nav {
+    position: absolute;
+    left: 45%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+}
+
+/* Center navigation links in mobile view */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        position: static;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+  #navbarNav .d-flex {
+    justify-content: center !important;
+    margin-top: 1rem;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  #navbarNav .button {
+    margin-right: 0 !important;
+  }
+}
+
+/* carousel */
+.carousel-bg {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    left: 5%;
+    right: 30%;
+    padding: 20px;
+    color: #000;
+    text-align: left;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.carousel-caption {
+    text-align: left;
+    max-width: 35%;
+    /* Ensure text doesn't cross the middle of the screen */
+    padding-left: 10px;
+    /* Optional: Add padding for spacing from the left */
+    margin-bottom: 40px;
+    /* Add space at the bottom of the caption */
+
+}
+
+.carousel-caption h1,
+.carousel-caption p {
+    color: black;
+    /* Make text color black */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: transparent;
+    /* Remove background */
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    filter: invert(1);
+    /* Invert the colors to make the arrow black */
+}
+
+@media (max-width: 820px) {
+    .carousel-bg {
+        height: 650px;
+        /* Make it taller on small screens */
+    }
+
+    .carousel-caption {
+        top: 50%;
+        text-align: center;
+        max-width: 90%;
+    }
+}
+
+/* Product display */
+body {
+    background-color: #f8f9fa;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover img {
+    /*  blur effect on hover */
+    filter: blur(2px);
+    transition: filter 0.3s ease-in-out;
+}
+
+.product-card .view-button {
+    /* Hidden button */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    .product-card .view-button {
+        top: 40%;
+        /* Adjust this value for phone screens */
+    }
+}
+
+.product-card:hover .view-button {
+    /* Show button on hover */
+    opacity: 1;
+}
+
+.view-button {
+    /* Button styling */
+    background: transparent;
+    border: 2px solid #555;
+    color: #555;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.view-button:hover {
+    background-color: #555;
+    color: white;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+/* Common concerns */
+.subtitle {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    /* Moved text further down to prevent overlap */
+}
+
+/* Style for the subtitle link */
+.subtitle a {
+    color: #000;
+    /* Set the color to black or any color you prefer */
+    font-weight: bold;
+    /* Make the text bold */
+    text-decoration: none;
+    /* Remove underline from the link */
+}
+
+/* Hover effect for the subtitle link */
+.subtitle a:hover {
+    text-decoration: underline;
+    /* Optional: Add underline on hover */
+}
+
+/* Ensure the grid-tile is centered */
+
+
+/* Add transition to make the zoom effect smooth */
+.grid-tile img {
+    transition: transform 0.3s ease;
+    /* Smooth transition for the zoom effect */
+    width: 100%;
+    /* Ensure the image takes up the full tile width */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Apply zoom effect on hover */
+.grid-tile:hover img {
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+/* Styling for the grid-tile */
+.grid-tile {
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+/* The event-image link (clickable area) */
+.event-image {
+    display: block;
+}
+
+/* Review Section */
+.review-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 400px;
+    margin-bottom: 10px;
+
+}
+
+.review-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.stars {
+    color: #ffcc00;
+}
+
+.faq-item {
+    padding: 6px 0;
+}
+
+.faq-question {
+    /* Question Styling */
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f8f9fa;
+    /* Light gray */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+    /* Adds space between questions */
+}
+
+.faq-question:hover {
+    background-color: #e0e0e0;
+    /* Lighter on hover */
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* When active (shown) */
+.faq-answer.show {
+    max-height: 300px;
+    /* Enough space for your content */
+    padding: 10px;
+}
+
+/* Login */
+.login-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.login-image {
+    flex: 1;
+    position: relative;
+}
+
+.login-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-text {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.login-form {
+    flex: 1;
+    background-color: #EBEBEB;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Slightly more rounded input edges */
+.login-form .form-control {
+    border-radius: 10px;
+    /* Adjust this value to your preference */
+}
+
+.extra-links a {
+    color: #555;
+    /* grey tone */
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.extra-links a:hover {
+    color: #222;
+    /* darker grey on hover */
+}
+
+
+/* Fade animation */
+.fade-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 10px 0 5px;
+}
+
+.rating {
+    color: #f5c518;
+    font-size: 0.9rem;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 10px 0 5px;
+}
+
+/* Add this to your existing CSS file */
+.d-flex.align-items-center {
+    margin-left: auto !important;
+    /* Forces it to the far right */
+    padding-right: 15px;
+    /* Maintains original spacing */
+}
+
+/* For mobile view */
+@media (max-width: 991.98px) {
+    .d-flex.align-items-center {
+        padding-right: 0;
+        margin-left: 0 !important;
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
