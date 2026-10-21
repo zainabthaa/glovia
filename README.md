@@ -35,7 +35,7 @@ Glovia is a full-stack skincare website that helps people understand their skin 
 2. Clone this repository into XAMPP's `htdocs` folder:
    ```bash
    cd /Applications/XAMPP/xamppfiles/htdocs   # macOS (Windows: C:\xampp\htdocs)
-   git clone https://github.com/<your-username>/glovia.git
+   git clone https://github.com/zainabthaa/glovia.git
    ```
 3. Import the database. Open <http://localhost/phpmyadmin>, go to **Import**, and choose `database/database.sql`. This creates a `glovia` database with sample products.
 4. Create your config file by copying `includes/config.example.php` to `includes/config.php`. The default values already match XAMPP: user `root` with no password.
@@ -52,7 +52,7 @@ The admin dashboard is at `admin_login.php`.
 
 ## Security
 
-I'm a cybersecurity student, so after building Glovia I went back and reviewed it as I would a real application. I did manual code review against the **OWASP Top 10**, plus static analysis with **Semgrep**, then fixed what I found and wrote attack tests to prove the fixes work. The full write-up, with each issue, how it could be exploited and how it was fixed, is in **[SECURITY.md](SECURITY.md)**.
+As a cybersecurity student, I came back to review Glovia's security as I would a real application. I did manual code review against the **OWASP Top 10**, plus static analysis with **Semgrep**, then fixed what I found and wrote attack tests to prove the fixes work. The full write-up, with each issue, how it could be exploited and how it was fixed, is in **[SECURITY.md](SECURITY.md)**.
 
 | Protection | How |
 |---|---|
@@ -113,3 +113,28 @@ glovia/
 | `reviews`          | User reviews                              |
 | `contact_messages` | Messages from the contact form            |
 | `login_attempts`   | Failed logins, used for brute-force protection |
+
+## Skills Demonstrated
+
+**Web development**
+- Full-stack PHP application: page rendering, form handling, sessions and an admin back office
+- Relational database design in MySQL (users, products, likes, reviews, contact messages, login attempts) with foreign keys
+- Responsive frontend with HTML, CSS, JavaScript and Bootstrap 5
+- AJAX interactions (liking products without reloading the page)
+- File uploads with server-side validation
+- Project organization: separate folders for includes, styles, scripts, assets and database files, with environment config kept out of version control
+
+**Application security**
+- Manual secure code review mapped to the **OWASP Top 10 (2021)**
+- Finding and fixing **CSRF**, **session fixation**, **user enumeration** (including a timing side channel), **XSS sinks**, **open redirects** and **unrestricted file upload**
+- Designing defenses: centrally enforced CSRF tokens, login throttling, hardened session cookies, a Content-Security-Policy and other security headers
+- Secure handling of secrets and credentials: removing a hard-coded OAuth secret, untracked config files, `.gitignore` rules against leaking database dumps
+- Data privacy: replacing real users' personal data with demo data before publishing
+
+**Security testing**
+- Static application security testing (**SAST**) with **Semgrep**, triaging results and documenting false positives
+- Writing automated attack tests in **Bash + curl** to prove each fix works (18 tests)
+- Writing a security report with risk ratings, exploitation scenarios, fixes and remaining risks ([SECURITY.md](SECURITY.md))
+
+**Tools**
+PHP · MySQL / MariaDB · JavaScript · Bootstrap · XAMPP · Git & GitHub · Semgrep · curl · phpMyAdmin
