@@ -4,6 +4,8 @@ Glovia is a full-stack skincare website that helps people understand their skin 
 
 ![Home page](screenshots/home.jpg)
 
+**[Live demo](https://zainabthaa.github.io/glovia/)** (static version: browsing and the skin quiz work; accounts and admin need the PHP backend)
+
 ## Features
 
 - **Skin type quiz** – answers are scored to recommend a skin type and matching products
