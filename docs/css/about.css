@@ -1,0 +1,172 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+}
+
+
+/*General buttons*/
+.button {
+    background: transparent;
+    width: 20%; 
+    max-width: 200px; /* Prevents button from being too large */
+    min-width: 120px; /* Prevents button from being too small */
+    border-radius: 50px; /* Rounded edges */
+    padding: 15px;
+    cursor: pointer;
+    border: 2px solid #555; 
+    color: #555; 
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem; /* Adjust text size */
+    text-decoration: none; /* Remove underline from the button */
+
+}
+
+.button:hover {     
+    background-color: #555;
+    color: white;
+}
+
+.about-hero {
+    background: url('../assets/images/dry_final.png') center/cover no-repeat;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    transform: none;
+    transition: none;
+}
+
+.about-hero:hover {
+    transform: none;
+}
+
+.about-hero .overlay {
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1s forwards;
+}
+
+.about-hero {
+    image-rendering: smooth;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.about-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #2c2c2c;
+}
+
+.about-hero p {
+    font-size: 1.1rem;
+    color: #5a5a5a;
+}
+
+.section,
+.mission,
+.approach,
+.principles,
+.quote-block,
+.cta {
+    padding: 2.5rem 1.5rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.principles ul {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.principles ul li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.principles ul li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.principles ul li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.principles ul li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.principles ul li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quote-block blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    border-left: 4px solid #555;
+    padding-left: 1rem;
+    color: #444;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.cta h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.75rem;
+}
+
+.cta a {
+    padding: 0.5rem 1;
+}
+
+.principles {
+    background: transparent;
+    padding: 3rem 1.5rem;
+    border-radius: 1rem;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

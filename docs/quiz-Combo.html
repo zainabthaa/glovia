@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Static demo of Glovia generated from the PHP site. Source: https://github.com/zainabthaa/glovia -->
+    <title>Find Your Skin Type - Glovia</title>
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <link rel="stylesheet" href="css/questions.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+
+    <link rel="icon" href="assets/images/round.png" type="image/png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="demo/demo.css">
+</head>
+
+<body>
+    <article id="article-head"> <!-- Header -->
+        <nav class="navbar navbar-expand-md navbar-light bg-light" style="padding-top: 1rem; padding-bottom: 1rem;">
+
+            <div class="container-fluid">
+
+                <!-- Left - Brand -->
+                <a class="navbar-brand" href="main.html">glovia</a>
+
+                <!-- Navbar Toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Center + Right - Navbar Content -->
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+
+                    <!-- Centered Nav Links -->
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="main.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Behind Glovia</a>
+                        </li>
+
+                        
+                        <li class="nav-item align-items-center ms-2" style="margin-top: 4px;">
+                            <a class="button text-center px-3 py-2" href="buildRoutine.html">Discover Your Skin</a>
+                        </li>
+
+
+                    </ul>
+
+                    <!-- Right-aligned user/account buttons -->
+                    <div class="d-flex align-items-center" style="margin-left: auto;">
+                                                    <a href="login.html" class="button text-center px-2 py-1" style="margin-right: 30px;">Account</a>
+                                            </div>
+                </div>
+            </div>
+        </nav>
+    </article>
+
+    <section class="hero-section fade-section" style="position: relative; height: 60vh; background-image: url('assets/images/poses.jpg'); background-size: cover; background-position: center;">
+        <!-- Text for large screens (no box) -->
+        <div id="textLarge" style="color: white; text-align: center; padding: 2rem;">
+            <h3 class="display-6 fw-bold text-center">Discover Your Skin Type</h3>
+            <p class="lead">Take this quick quiz to find out what skincare products suit you best!</p>
+        </div>
+
+        <!-- Boxed text for small screens only -->
+        <div id="overlayBox" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 800px; width: 80%; background-color: rgba(0, 0, 0, 0.2); padding: 1.5rem 2rem; border-radius: 1rem; text-align: center; color: white;">
+            <h3 class="display-6 fw-bold text-center">Discover Your Skin Type</h3>
+            <p class="lead">Take this quick quiz to find out what skincare products suit you best!</p>
+        </div>
+
+        <style>
+            /* Hide large text on small screens */
+            @media (max-width: 768px) {
+                #textLarge {
+                    display: none;
+                }
+
+                #overlayBox {
+                    display: block !important;
+                }
+            }
+        </style>
+    </section>
+
+    <main class="container my-5">
+
+                    <!-- Show Result and Recommended Products -->
+            <section class="text-center mb-5">
+                <h2>Your skin type appears to be: <span class="text-primary">Combo</span></h2>
+                <p class="lead">Based on your answers, we recommend these products for your skin.</p>
+            </section>
+
+            <article class="fade-section"> <!-- Recommended Products using Database -->
+                <br>
+                <div class="text-overlay p-3">
+                    <h3 class="display-6 fw-bold text-center">Recommended Products</h3>
+                </div>
+
+                <div class="container py-2">
+                    <div class="row gy-4">
+                                                        <div class="col-12 col-md-6">
+                                    <div class="product-card">
+                                        <div class="left-side">
+                                            <img src="assets/products/rec17.jpg" alt="Product Image" class="product-image">
+                                            <br><br>
+                                            <h5 class="product-title">Beauty Of Joseon Green Plum Cleanser</h5>
+                                            <p class="product-price">SAR64.00</p>
+                                        </div>
+                                        <div class="right-side d-flex flex-column justify-content-between" style="height: 100%;">
+                                            <div class="product-description-wrapper mb-2">
+                                                <div class="product-description short-description">
+                                                    A hypoallergenic, slightly acidic gel that cleanses without drying. Infused with plum and mung bean extracts to refresh and hydrate sensitive skin.                                                </div>
+                                                <button class="read-more-btn btn btn-link p-0 mt-1">Read More</button>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between align-items-center mt-auto action-buttons">
+                                                <!-- Heart Button -->
+                                                <button type="button" class="btn-heart" data-product-id="52" aria-label="Like"
+                                                    style="background: none; border: none; padding: 0; cursor: pointer; height: 40px;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357
+                3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01z" />
+                                                    </svg>
+                                                </button>
+
+                                                <!-- View Button -->
+                                                <a href="https://www.nahdionline.com/en-ae/beauty-of-joseon-green-plum-refreshing-cleanser/pdp/102852212" target="_blank">
+                                                    <button class="button-right">View</button>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                                        <div class="col-12 col-md-6">
+                                    <div class="product-card">
+                                        <div class="left-side">
+                                            <img src="assets/products/rec16.jpg" alt="Product Image" class="product-image">
+                                            <br><br>
+                                            <h5 class="product-title">Cosrx Aha/Bha Clarifying Toner</h5>
+                                            <p class="product-price">SAR151.90</p>
+                                        </div>
+                                        <div class="right-side d-flex flex-column justify-content-between" style="height: 100%;">
+                                            <div class="product-description-wrapper mb-2">
+                                                <div class="product-description short-description">
+                                                    Exfoliates, smooths, and softens skin while clearing congested pores. Balances oil production and boosts skin vitality with purifying botanical ingredients.                                                </div>
+                                                <button class="read-more-btn btn btn-link p-0 mt-1">Read More</button>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between align-items-center mt-auto action-buttons">
+                                                <!-- Heart Button -->
+                                                <button type="button" class="btn-heart" data-product-id="51" aria-label="Like"
+                                                    style="background: none; border: none; padding: 0; cursor: pointer; height: 40px;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357
+                3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01z" />
+                                                    </svg>
+                                                </button>
+
+                                                <!-- View Button -->
+                                                <a href="https://www.nahdionline.com/en-sa/103065721/pdp/103065721" target="_blank">
+                                                    <button class="button-right">View</button>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                                        <div class="col-12 col-md-6">
+                                    <div class="product-card">
+                                        <div class="left-side">
+                                            <img src="assets/products/rec15.jpg" alt="Product Image" class="product-image">
+                                            <br><br>
+                                            <h5 class="product-title">Neutrogena Hydro Boost Moisturizer</h5>
+                                            <p class="product-price">SAR51.70</p>
+                                        </div>
+                                        <div class="right-side d-flex flex-column justify-content-between" style="height: 100%;">
+                                            <div class="product-description-wrapper mb-2">
+                                                <div class="product-description short-description">
+                                                    Instantly hydrates and smooths skin with hyaluronic acid, keeping it supple and refreshed all day. Strengthens the moisture barrier with glycerin and olive extract. Oil-free, non-comedogenic, and safe for sensitive skin.                                                </div>
+                                                <button class="read-more-btn btn btn-link p-0 mt-1">Read More</button>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between align-items-center mt-auto action-buttons">
+                                                <!-- Heart Button -->
+                                                <button type="button" class="btn-heart" data-product-id="50" aria-label="Like"
+                                                    style="background: none; border: none; padding: 0; cursor: pointer; height: 40px;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357
+                3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01z" />
+                                                    </svg>
+                                                </button>
+
+                                                <!-- View Button -->
+                                                <a href="https://www.nahdionline.com/en-sa/neutrogena-hydro-boost-moisturizer-water-gel-normal-to-combination-skin-50-ml/pdp/101081081?srsltid=AfmBOoqd9o8fQ7Vq-Ko1zAKehC-ZmF9BaKTVPphjSUXaXV1BZ-0qMfJb" target="_blank">
+                                                    <button class="button-right">View</button>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                                        <div class="col-12 col-md-6">
+                                    <div class="product-card">
+                                        <div class="left-side">
+                                            <img src="assets/products/rec14.png" alt="Product Image" class="product-image">
+                                            <br><br>
+                                            <h5 class="product-title">La Roche-Posay Moisturizer</h5>
+                                            <p class="product-price">SAR166.90</p>
+                                        </div>
+                                        <div class="right-side d-flex flex-column justify-content-between" style="height: 100%;">
+                                            <div class="product-description-wrapper mb-2">
+                                                <div class="product-description short-description">
+                                                    Hydrates and soothes sensitive, allergy-prone, and oily skin for 48H. With prebiotic Sphingobioma and Neurosensine, it helps reduce irritation, itching, and redness while repairing the skin barrier. Hypoallergenic and suitable for daily use.                                                </div>
+                                                <button class="read-more-btn btn btn-link p-0 mt-1">Read More</button>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between align-items-center mt-auto action-buttons">
+                                                <!-- Heart Button -->
+                                                <button type="button" class="btn-heart" data-product-id="49" aria-label="Like"
+                                                    style="background: none; border: none; padding: 0; cursor: pointer; height: 40px;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357
+                3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01z" />
+                                                    </svg>
+                                                </button>
+
+                                                <!-- View Button -->
+                                                <a href="https://www.nahdionline.com/en-sa/la-roche-posay-tol-dermallergo-fluid-40ml/pdp/102719198?srsltid=AfmBOor3Dmx7xBZy6LR-jLK14c-hnIzyfI8VS7VCwKR2iGmL_MPf9OfG" target="_blank">
+                                                    <button class="button-right">View</button>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                                        <div class="col-12 col-md-6">
+                                    <div class="product-card">
+                                        <div class="left-side">
+                                            <img src="assets/products/rec13.jpg" alt="Product Image" class="product-image">
+                                            <br><br>
+                                            <h5 class="product-title">Cerave Foaming Cleanser</h5>
+                                            <p class="product-price">SAR55.30</p>
+                                        </div>
+                                        <div class="right-side d-flex flex-column justify-content-between" style="height: 100%;">
+                                            <div class="product-description-wrapper mb-2">
+                                                <div class="product-description short-description">
+                                                    A gel-to-foam wash that removes oil, dirt, and makeup without drying. Hydrates for 24 hours with 3 ceramides. Fragrance-free, dermatologist-developed, and ideal for normal to oily skin.                                                </div>
+                                                <button class="read-more-btn btn btn-link p-0 mt-1">Read More</button>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between align-items-center mt-auto action-buttons">
+                                                <!-- Heart Button -->
+                                                <button type="button" class="btn-heart" data-product-id="48" aria-label="Like"
+                                                    style="background: none; border: none; padding: 0; cursor: pointer; height: 40px;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357
+                3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01z" />
+                                                    </svg>
+                                                </button>
+
+                                                <!-- View Button -->
+                                                <a href="https://www.nahdionline.com/en-sa/cerave-foaming-cleanser-for-normal-to-oily-skin-with-hyaluronic-acid-236-ml/pdp/101892677" target="_blank">
+                                                    <button class="button-right">View</button>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                            </div>
+                </div>
+
+                <script>
+                    const isLoggedIn = false;
+
+                    document.querySelectorAll('.btn-heart').forEach(button => {
+                        button.addEventListener('click', () => {
+                            if (!isLoggedIn) {
+                                // You can implement your login popup here
+                                alert('Please log in to like products.');
+                                return;
+                            }
+
+                            const productId = button.getAttribute('data-product-id');
+                            fetch('toggle_like.php', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/x-www-form-urlencoded',
+                                    },
+                                    body: `product_id=${productId}`
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    const svg = button.querySelector('svg');
+                                    if (data.status === 'liked') {
+                                        svg.setAttribute('fill', 'red');
+                                        svg.setAttribute('stroke', 'red');
+                                    } else if (data.status === 'unliked') {
+                                        svg.setAttribute('fill', 'none');
+                                        svg.setAttribute('stroke', 'currentColor');
+                                    }
+                                })
+                                .catch(err => console.error('Error:', err));
+                        });
+                    });
+                </script>
+            </article>
+
+            <div class="text-center mt-5">
+                <a href="" class="button">Take Quiz Again</a>
+            </div>
+
+            </main>
+
+    <article> <!-- Footer -->
+        <div class="container-fluid">
+            <footer class="py-3" style="background: #f8f9fa; border-top: 2px solid #ddd;">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <img src="assets/images/round.png" alt="Company Logo" style="width: 120px; border-radius: 50%;">
+                            <p class="mt-2" style="color: #555;">© 2025 Glovia</p>
+                        </div>
+                        <div class="col-md-4">
+                            <br>
+                            <h5 style="font-weight: 600; color: #333;">Explore</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="main.html" style="text-decoration: none; color: #666;">Home</a></li>
+                                <li><a href="about.html" style="text-decoration: none; color: #666;">Behind Glovia</a>
+                                </li>
+                                <li><a href="buildRoutine.html" style="text-decoration: none; color: #666;">Discover Your Skin</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <br>
+                            <h5 style="font-weight: 600; color: #333;">Contact & Support</h5>
+                            <ul class="list-unstyled" style="color: #666;">
+                                <li><a href="contact.html" style="text-decoration: none; color: #666;">Contact Us</a>
+                                </li>
+                                <li><a href="terms.html" style="text-decoration: none; color: #666;">Terms &
+                                        Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </article>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionBlocks = document.querySelectorAll('.question-block');
+            const wrapper = document.querySelector('.questions-wrapper');
+            let currentIndex = 0;
+
+            function showQuestion(index) {
+                questionBlocks.forEach((block, i) => {
+                    if (i === index) {
+                        block.classList.remove('hidden');
+                        wrapper.style.height = block.offsetHeight + 'px'; // set wrapper height
+                    } else {
+                        block.classList.add('hidden');
+                    }
+                });
+            }
+
+            showQuestion(currentIndex);
+
+            questionBlocks.forEach((block, index) => {
+                const inputs = block.querySelectorAll('input[type="radio"]');
+                inputs.forEach(input => {
+                    input.addEventListener('change', () => {
+                        if (index < questionBlocks.length - 1) {
+                            currentIndex = index + 1;
+                            showQuestion(currentIndex);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script src="js/main.js"></script>
+
+    <script src="demo/demo.js"></script>
+</body>
+
+</html>

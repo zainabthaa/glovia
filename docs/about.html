@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Static demo of Glovia generated from the PHP site. Source: https://github.com/zainabthaa/glovia -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/images/round.png" type="image/png">
+
+  <title>About Glovia</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+
+
+  <link rel="icon" href="assets/images/round.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+    <link rel="stylesheet" href="demo/demo.css">
+</head>
+
+<body>
+  <article id="article-head"> <!-- Header -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light" style="padding-top: 1rem; padding-bottom: 1rem;">
+
+      <div class="container-fluid">
+
+        <!-- Left - Brand -->
+        <a class="navbar-brand" href="main.html">glovia</a>
+
+        <!-- Navbar Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Center + Right - Navbar Content -->
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+
+          <!-- Centered Nav Links -->
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="main.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">Behind Glovia</a>
+            </li>
+
+            
+            <li class="nav-item align-items-center ms-2" style="margin-top: 4px;">
+              <a class="button text-center px-3 py-2" href="buildRoutine.html">Discover Your Skin</a>
+            </li>
+
+          </ul>
+
+          <!-- Right-aligned user/account buttons -->
+          <div class="d-flex align-items-center" style="margin-left: auto; padding-left: 50px;">
+                          <a href="login.html" class="button text-center px-2 py-1" style="margin-right: 15px;">Account</a>
+                      </div>
+        </div>
+      </div>
+    </nav>
+  </article>
+
+  <section class="hero-section fade-section" style="position: relative; height: 60vh; background-image: url('assets/images/smile.jpg'); background-size: cover; background-position: center;">
+    <!-- Text for large screens (no box) -->
+    <div id="textLarge" style="color: white; text-align: center; padding: 2rem;">
+      <h3 class="display-6 fw-bold text-center">Glow with Meaning</h3>
+      <p class="lead">Where glow meets science — welcome to Glovia.</p>
+    </div>
+
+    <!-- Boxed text for small screens only -->
+    <div id="overlayBox" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 800px; width: 80%; background-color: rgba(0, 0, 0, 0.2); padding: 1.5rem 2rem; border-radius: 1rem; text-align: center; color: white;">
+      <h3 class="display-6 fw-bold text-center">Glow with Meaning</h3>
+      <p class="lead">Where glow meets science — welcome to Glovia.</p>
+    </div>
+
+    <style>
+      /* Hide large text on small screens */
+      @media (max-width: 768px) {
+        #textLarge {
+          display: none;
+        }
+
+        #overlayBox {
+          display: block !important;
+        }
+      }
+    </style>
+  </section>
+
+  <article class="fade-section"> <!-- Our Origin -->
+    <section class="mission">
+      <div class="container my-3">
+        <div class="row align-items-center">
+          <div class="text-overlay p-3">
+            <h3 class="display-6 fw-bold text-center">Our Origin</h3>
+            <p class="mission-text">Glovia is more than a name — it’s a fusion of <strong>Glow</strong> and
+              <strong>Euphoria</strong>. We started with a simple idea: people deserve clarity when it comes to their
+              skin.
+              We're not just a website; we’re a thoughtful space built to decode skincare struggles, back it with
+              research,
+              and recommend only what makes sense. No shortcuts. Just science. With our deep commitment to understanding
+              each
+              individual's skin needs, we aim to provide clear, science-backed solutions that make a real difference.
+            </p>
+          </div>
+        </div>
+    </section>
+  </article>
+
+  <section class="fade-section"> <!-- Photo with txt How We Help-->
+    <section class="container">
+      <div class="row align-items-center">
+        <!-- Left Side: Image -->
+        <div class="col-md-6 text-center">
+          <img src="assets/images/beind_main.png" alt="Natural skincare ingredients" class="img-fluid w-100 rounded">
+        </div>
+        <!-- Right Side: Text -->
+        <div class="col-md-6 text-center position-relative">
+          <div class="text-overlay p-3">
+            <h3 class="display-6 fw-bold">How We Help</h3>
+            <p class="approach-text">We break things down. From understanding your skin’s unique needs to sharing
+              product
+              recommendations that actually help — our research-backed advice is made for real people with real
+              concerns.
+            </p>
+            <p class="approach-text">At Mix With Glovia, we also bring you <strong>DIY recipes</strong> you can try at
+              home, because skincare
+              should be both effective and approachable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section class="principles fade-section"> <!-- What fules Our glow -->
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="text-overlay p-3">
+          <h3 class="display-6 fw-bold text-center">What Fuels Our Glow</h3>
+          <p>At Glovia, we believe great skin is built on a foundation of knowledge and understanding. Our approach
+            combines
+            authentic insights, backed by science, with a deep respect for individuality. We’re here to empower you to
+            make
+            informed choices — whether through product recommendations or DIY skincare solutions.</p>
+          <ul>
+            <li><strong>Science-driven clarity:</strong> We focus on research, not trends, to bring you honest, reliable
+              advice.</li>
+            <li><strong>Empowerment through education:</strong> Skincare isn’t one-size-fits-all. We encourage you to
+              take
+              control of your routine.</li>
+            <li><strong>Transparency:</strong> We don’t just suggest products; we explain why they work and how they fit
+              your skin’s needs.</li>
+            <li><strong>Simplicity at its core:</strong> Our advice is straightforward and easy to follow, because
+              skincare
+              shouldn’t be complicated.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-block fade-section"> <!-- Quote -->
+    <div class="container">
+      <blockquote>
+        "Glow with knowledge, shine with confidence. Skincare should be simple, effective, and based on understanding —
+        because when you know what’s right, you radiate confidence."
+        <span class="quote-author">~ Glovia</span>
+      </blockquote>
+    </div>
+  </section>
+
+
+  <section class="cta fade-section"> <!-- main -->
+    <div class="container text-center">
+      <h2>Ready to Explore?</h2>
+      <p>Let Glovia be your guide through the world of skincare — researched, refined, and real.</p>
+      <br>
+      <a href="main.html" class="button">Discover Now</a>
+    </div>
+  </section>
+    <script src="demo/demo.js"></script>
+</body>
+
+<article> <!-- Footer -->
+  <div class="container-fluid">
+    <footer class="py-3" style="background: #f8f9fa; border-top: 2px solid #ddd;">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <img src="assets/images/round.png" alt="Company Logo" style="width: 120px; border-radius: 50%;">
+            <p class="mt-2" style="color: #555;">© 2025 Glovia</p>
+          </div>
+          <div class="col-md-4">
+            <br>
+            <h5 style="font-weight: 600; color: #333;">Explore</h5>
+            <ul class="list-unstyled">
+              <li><a href="main.html" style="text-decoration: none; color: #666;">Home</a></li>
+              <li><a href="about.html" style="text-decoration: none; color: #666;">Behind Glovia</a>
+              </li>
+              <li><a href="buildRoutine.html" style="text-decoration: none; color: #666;">Discover Your Skin</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <br>
+            <h5 style="font-weight: 600; color: #333;">Contact & Support</h5>
+            <ul class="list-unstyled" style="color: #666;">
+              <li><a href="contact.html" style="text-decoration: none; color: #666;">Contact Us</a>
+              </li>
+              <li><a href="terms.html" style="text-decoration: none; color: #666;">Terms &
+                  Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</article>
+
+<!-- JavaScript -->
+<script src="js/main.js"></script>
+
+<!-- 
+<script>
+  // fade
+  const faders = document.querySelectorAll('.fade-section');
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const bounding = entry.boundingClientRect;
+
+      if (entry.isIntersecting && bounding.top > 0) {
+        entry.target.classList.add('visible');
+      }
+
+      if (!entry.isIntersecting && bounding.top > 0) {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach(section => {
+    appearOnScroll.observe(section);
+  });
+
+  // circle user icon
+  document.addEventListener("DOMContentLoaded", function() {
+    const accountBtn = document.getElementById("accountBtn");
+    const username = localStorage.getItem("username");
+
+    if (username && accountBtn) {
+      const firstLetter = username.charAt(0).toUpperCase();
+      accountBtn.textContent = firstLetter;
+      accountBtn.classList.add("circle-button");
+    }
+  });
+
+  // pop-up message (only show once after login/signup)
+  document.addEventListener("DOMContentLoaded", function() {
+    const username = localStorage.getItem("username");
+    const signup = localStorage.getItem("signup");
+    const showWelcome = localStorage.getItem("showWelcome");
+
+    if (showWelcome && (signup || username)) {
+      if (signup) {
+        document.getElementById("welcome-message").textContent = `Congratulations, ${username}! Your account has been successfully created.`;
+        localStorage.removeItem("signup");
+      } else if (username) {
+        document.getElementById("welcome-message").textContent = `Welcome back, ${username}!`;
+      }
+
+      document.getElementById("welcome-popup").style.display = "flex";
+
+      // Remove the flag so it doesn't show on refresh
+      localStorage.removeItem("showWelcome");
+    }
+  });
+
+  function closePopup() {
+    document.getElementById("welcome-popup").style.display = "none";
+  }
+</script>
+          -->
+
+</html>

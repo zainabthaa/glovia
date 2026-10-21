@@ -1,0 +1,122 @@
+.question-block {
+    background: linear-gradient(135deg, #fafafa 0%, #e0e0e0 100%);
+    border-radius: 12px;
+    padding: 24px 30px;
+    margin-bottom: 28px;
+    box-shadow: 0 8px 20px rgba(100, 100, 100, 0.15);
+    border-left: 6px solid #8c8c8c;
+    cursor: pointer;
+
+    opacity: 1;
+    transform: translateY(0);
+    transition: 
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        box-shadow 0.3s ease,
+        border-left-color 0.3s ease;
+}
+
+.question-block.hidden {
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+    height: 0;
+    margin: 0;
+    padding: 0 30px;
+    overflow: hidden;
+    border-left-color: transparent;
+    box-shadow: none;
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        height 0.5s ease,
+        margin 0.5s ease,
+        padding 0.5s ease,
+        border-left-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.question-block:hover:not(.hidden) {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 28px rgba(70, 70, 70, 0.3);
+    border-left-color: #0057b8; /* subtle, modern blue accent */
+}
+
+.question-block label.form-label {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2e2e2e;
+    margin-bottom: 12px;
+    display: block;
+    letter-spacing: 0.02em;
+}
+
+.question-block .form-check {
+    margin-bottom: 12px;
+}
+
+.question-block .form-check-input:checked + .form-check-label {
+    color: #004a99; /* deep blue */
+    font-weight: 700;
+}
+
+.hidden {
+    display: block !important;
+}
+
+.questions-wrapper {
+  position: relative;
+  height: 280px; /* approx height of a question block */
+  margin-bottom: 20px;
+}
+
+.question-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.question-block.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15px);
+}
+
+.button {
+    background: transparent;
+    width: 100%;
+    max-width: 300px;
+    /* Prevents button from being too large */
+    min-width: 120px;
+    /* Prevents button from being too small */
+    border-radius: 50px;
+    /* Rounded edges */
+    padding: 15px;
+    cursor: pointer;
+    border: 2px solid #555;
+    color: #555;
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+    /* Adjust text size */
+    text-decoration: none;
+    /* Remove underline from the button */
+
+}
+
+.button:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 576px) {
+    .button {
+        width: 100%;
+        max-width: 300px;
+        font-size: 1rem;
+    }
+}
